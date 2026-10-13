@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Question → Action Agent</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<main class="container">
+
+    <header class="hero">
+
+        <div class="badge">
+            AI ACTION PLANNER
+        </div>
+
+        <h1>
+            Question <span>→</span> Action
+        </h1>
+
+        <p>
+            Turn your questions into personalized,
+            prioritized and adaptive action plans.
+        </p>
+
+    </header>
+
+
+    <section class="card">
+
+        <label for="question">
+            What do you want to achieve?
+        </label>
+
+        <textarea
+            id="question"
+            placeholder="Example: I want to learn DSA and prepare for coding interviews. I have 2 hours every day and 3 months..."
+        ></textarea>
+
+        <button
+            id="planButton"
+            onclick="createPlan()"
+        >
+            Create My Action Plan →
+        </button>
+
+    </section>
+
+
+    <section
+        id="result"
+        class="results hidden"
+    >
+
+        <div class="result-card">
+
+            <h2>🎯 Your Goal</h2>
+
+            <p id="goal"></p>
+
+        </div>
+
+
+        <div class="grid">
+
+            <div class="result-card">
+
+                <h2>💡 Assumptions</h2>
+
+                <ul id="assumptions"></ul>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h2>🔥 Priorities</h2>
+
+                <ul id="priorities"></ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h2>🗺️ Action Plan</h2>
+
+            <div id="actionPlan"></div>
+
+        </div>
+
+
+        <div class="result-card today">
+
+            <h2>⚡ What To Do Today</h2>
+
+            <ul id="todayActions"></ul>
+
+        </div>
+
+
+        <div class="result-card checkpoint">
+
+            <h2>🏆 Success Checkpoint</h2>
+
+            <p id="successCheckpoint"></p>
+
+        </div>
+
+
+        <div class="result-card adaptive">
+
+            <h2>🔄 Adaptive Replanning</h2>
+
+            <p class="description">
+                Tell the agent what you completed or where you struggled.
+                It will adjust your plan.
+            </p>
+
+            <textarea
+                id="progress"
+                placeholder="Example: I completed arrays and strings, but I am struggling with recursion..."
+            ></textarea>
+
+            <button
+                id="replanButton"
+                onclick="replanPlan()"
+            >
+                Replan My Schedule →
+            </button>
+
+        </div>
+
+
+        <div
+            id="replanResult"
+            class="result-card hidden"
+        >
+
+            <h2>🧠 Updated Plan</h2>
+
+            <div id="updatedPlan"></div>
+
+            <h3>Today's Actions</h3>
+
+            <ul id="newTodayActions"></ul>
+
+            <h3>Next Checkpoint</h3>
+
+            <p id="nextCheckpoint"></p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Question → Action Agent • Powered by Gemini
+    </footer>
+
+</main>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
